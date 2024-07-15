@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+xmlns:th="http://www.thymeleaf.org">
+
   <head>
     <meta charset="utf-8" />
     <title>KidKinder - Kindergarten Website Template</title>
@@ -8,7 +10,7 @@
     <meta content="Free HTML Templates" name="description" />
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
+    <link href="static/img/favicon.ico" rel="icon" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -31,7 +33,7 @@
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="../static/css/style.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -80,7 +82,7 @@
           </h1>
         </div>
         <div class="col-lg-6 text-center text-lg-right mt-5 mb-5">
-          <img class="img-fluid" src="img/quizz_image.jpg" alt="" style="margin-top: 10px; margin-bottom: 10px;" />
+          <img class="img-fluid" src="../static/img/quizz_image.jpg" alt="" style="margin-top: 10px; margin-bottom: 10px;" />
         </div>
       </div>
     </div>
@@ -90,7 +92,7 @@
     <div class="container-fluid pt-5">
       <div class="container pb-3">
         <div class="row">
-          <div class="col-lg-4 col-md-6 pb-1">
+          <div class="col-lg-4 col-md-6 pb-1" th:each="subjectsList:${subjectsList}">
             <div
               class="d-flex bg-light shadow-sm border-top rounded mb-4"
               style="padding: 30px"
@@ -98,92 +100,12 @@
               <i
                 class="flaticon-050-fence h1 font-weight-normal text-primary mb-3"
               ></i>
-              <div class="pl-4">
-                <h4>Toán</h4>
-                <p class="m-0">
+              <a href="Subject" class="pl-4">
+                <h4 th:text="${subjectsList.getSubjectName()}"></h4>
+                <p class="m-0" th:text="${subjectsList.getDescription()}">
                   Không cần biết tính toán,chỉ cần biết tính em
                 </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 pb-1">
-            <div
-              class="d-flex bg-light shadow-sm border-top rounded mb-4"
-              style="padding: 30px"
-            >
-              <i
-                class="flaticon-022-drum h1 font-weight-normal text-primary mb-3"
-              ></i>
-              <div class="pl-4">
-                <h4>Vật Lý</h4>
-                <p class="m-0">
-                  Dù thế giới không có trọng lực cũng không thể nào ngăn cách được đôi ta
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 pb-1">
-            <div
-              class="d-flex bg-light shadow-sm border-top rounded mb-4"
-              style="padding: 30px"
-            >
-              <i
-                class="flaticon-030-crayons h1 font-weight-normal text-primary mb-3"
-              ></i>
-              <div class="pl-4">
-                <h4>Hóa Học</h4>
-                <p class="m-0">
-                  Thí nghiệm bùng cháy
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 pb-1">
-            <div
-              class="d-flex bg-light shadow-sm border-top rounded mb-4"
-              style="padding: 30px"
-            >
-              <i
-                class="flaticon-017-toy-car h1 font-weight-normal text-primary mb-3"
-              ></i>
-              <div class="pl-4">
-                <h4>Văn Học</h4>
-                <p class="m-0">
-                  Tắt đèn là của Ngô Tất Tố
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 pb-1">
-            <div
-              class="d-flex bg-light shadow-sm border-top rounded mb-4"
-              style="padding: 30px"
-            >
-              <i
-                class="flaticon-025-sandwich h1 font-weight-normal text-primary mb-3"
-              ></i>
-              <div class="pl-4">
-                <h4>Tiếng Anh</h4>
-                <p class="m-0">
-                  My English is so noob
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 pb-1">
-            <div
-              class="d-flex bg-light shadow-sm border-top rounded mb-4"
-              style="padding: 30px"
-            >
-              <i
-                class="flaticon-047-backpack h1 font-weight-normal text-primary mb-3"
-              ></i>
-              <div class="pl-4">
-                <h4>Lịch sử</h4>
-                <p class="m-0">
-                  Hoàng Sa, Trường Sa là của Việt Nam
-                </p>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -211,7 +133,7 @@
             <div class="d-flex align-items-center">
               <img
                 class="rounded-circle"
-                src="img/testimonial-1.jpg"
+                src="../static/img/testimonial-1.jpg"
                 style="width: 70px; height: 70px"
                 alt="Image"
               />
@@ -230,7 +152,7 @@
             <div class="d-flex align-items-center">
               <img
                 class="rounded-circle"
-                src="img/testimonial-2.jpg"
+                src="../static/img/testimonial-2.jpg"
                 style="width: 70px; height: 70px"
                 alt="Image"
               />
@@ -249,7 +171,7 @@
             <div class="d-flex align-items-center">
               <img
                 class="rounded-circle"
-                src="img/testimonial-3.jpg"
+                src="../static/img/testimonial-3.jpg"
                 style="width: 70px; height: 70px"
                 alt="Image"
               />
@@ -268,7 +190,7 @@
             <div class="d-flex align-items-center">
               <img
                 class="rounded-circle"
-                src="img/testimonial-4.jpg"
+                src="../static/img/testimonial-4.jpg"
                 style="width: 70px; height: 70px"
                 alt="Image"
               />
@@ -436,10 +358,10 @@
     <script src="lib/lightbox/js/lightbox.min.js"></script>
 
     <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+    <script src="../static/mail/jqBootstrapValidation.min.js"></script>
+    <script src="../static/mail/contact.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="../static/js/main.js"></script>
   </body>
 </html>
