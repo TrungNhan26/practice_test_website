@@ -6,109 +6,42 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <link rel="stylesheet" href="static/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-    <link rel="stylesheet" href="static/css/ready.css">
+<!--    <link rel="stylesheet" href="static/css/ready.css">-->
     <link rel="stylesheet" href="static/css/demo.css">
 </head>
 <body>
 <div class="wrapper">
-    <div class="main-header">
-        <div class="logo-header">
-
-            Multiple-choice
-
-            <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
-        </div>
-        <nav class="navbar navbar-header navbar-expand-lg">
+    <div class="main-panel">
+        <div class="content">
             <div class="container-fluid">
-
-            </div>
-        </nav>
-    </div>
-    <div class="sidebar">
-        <div class="scrollbar-inner sidebar-wrapper">
-            <ul class="nav">
-                <li class="nav-item active">
-                    <a href="index.html">
-                        <p>Dashboard</p>
-
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-            <div class="main-panel">
-                <div class="content">
-                    <div class="container-fluid">
-                        <h4 class="page-title">Bài Thi Trắc Nghiệm</h4>
-                        <form>
-                            <div class="card">
-                                <div class="card-header">
-                                    Câu hỏi 1: Thủ đô của Việt Nam là gì?
-                                </div>
-                                <div class="card-body">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="question1" id="q1a" value="a">
-                                        <label class="form-check-label" for="q1a">
-                                            Hà Nội
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="question1" id="q1b" value="b">
-                                        <label class="form-check-label" for="q1b">
-                                            TP. Hồ Chí Minh
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="question1" id="q1c" value="c">
-                                        <label class="form-check-label" for="q1c">
-                                            Đà Nẵng
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="question1" id="q1d" value="d">
-                                        <label class="form-check-label" for="q1d">
-                                            Hải Phòng
-                                        </label>
-                                    </div>
-                                </div>
+                <h4 class="page-title">Bài Thi Trắc Nghiệm</h4>
+                <form action="/submitQuiz" method="post">
+                    <div th:each="question : ${questions}" class="card mt-3">
+                        <div class="card-header" th:text="${question.questionText}">
+                        </div>
+                        <div class="card-body">
+                            <div th:each="option : ${questionOptionsMap[question.questionId]}" class="form-check">
+                                <input class="form-check-input" type="radio"
+                                       th:name="'question' + ${question.questionId}"
+                                       th:id="'q' + ${question.questionId} + 'a' + ${option.optionId}"
+                                       th:value="${option.optionId}">
+                                <label class="form-check-label"
+                                       th:for="'q' + ${question.questionId} + 'a' + ${option.optionId}"
+                                       th:text="${option.optionText}">
+                                </label>
                             </div>
-                            <!-- Thêm các câu hỏi tương tự ở đây -->
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Nộp bài</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
                         </div>
                     </div>
-                </div>
+                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                </form>
             </div>
         </div>
     </div>
 </div>
-</div>
-<!-- Modal -->
-
-</div>
+<script src="static/js/core/jquery.3.2.1.min.js"></script>
+<script src="static/js/core/popper.min.js"></script>
+<script src="static/js/core/bootstrap.min.js"></script>
+<script src="static/js/ready.min.js"></script>
+<script src="static/js/demo.js"></script>
 </body>
-<script src="assets/js/core/jquery.3.2.1.min.js"></script>
-<script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-<script src="assets/js/core/popper.min.js"></script>
-<script src="assets/js/core/bootstrap.min.js"></script>
-<script src="assets/js/plugin/chartist/chartist.min.js"></script>
-<script src="assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
-<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
-<script src="assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-<script src="assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
-<script src="assets/js/plugin/chart-circle/circles.min.js"></script>
-<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-<script src="assets/js/ready.min.js"></script>
-<script src="assets/js/demo.js"></script>
 </html>

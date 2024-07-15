@@ -2,6 +2,8 @@ package com.exam.quiz_online.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Questions {
     @Id
@@ -14,7 +16,8 @@ public class Questions {
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String questionText;
-
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
+    private List<Options> options;
     @Column(length = 20)
     private String questionType;
 
@@ -58,6 +61,14 @@ public class Questions {
 
     public void setMarks(int marks) {
         this.marks = marks;
+    }
+
+    public List<Options> getOptions() {
+        return options;
+    }
+
+    public void setOptions(List<Options> options) {
+        this.options = options;
     }
 }
 
