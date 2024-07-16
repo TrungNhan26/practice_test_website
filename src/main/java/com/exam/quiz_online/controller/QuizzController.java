@@ -38,7 +38,7 @@ public class QuizzController {
 
         model.addAttribute("questions", questionsList);
         model.addAttribute("questionOptionsMap", questionOptionsMap);
-        return "Quizz";
+        return "Quizz.html";
     }
 }
 
