@@ -24,14 +24,14 @@
     />
 
     <!-- Flaticon Font -->
-    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet" />
+    <link href="../lib/flaticon/font/flaticon.css" rel="stylesheet" />
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="../static/css/style.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -62,8 +62,8 @@
         >
           <div class="navbar-nav font-weight-bold mx-auto py-0">
             <a href="index.html" class="nav-item nav-link">Home</a>
-            <a href="class.html" class="nav-item nav-link active">Classes</a>
-            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="class.html" class="nav-item nav-link">Classes</a>
+            <a href="contact.html" class="nav-item nav-link active">Contact</a>
           </div>
           <a href="" class="btn btn-primary px-4">Join Class</a>
         </div>
@@ -77,148 +77,139 @@
         class="d-flex flex-column align-items-center justify-content-center"
         style="min-height: 400px"
       >
-        <h3 class="display-3 font-weight-bold text-white">Our Classes</h3>
+        <h3 class="display-3 font-weight-bold text-white">Contact Us</h3>
         <div class="d-inline-flex text-white">
           <p class="m-0"><a class="text-white" href="">Home</a></p>
           <p class="m-0 px-2">/</p>
-          <p class="m-0">Our Classes</p>
+          <p class="m-0">Contact Us</p>
         </div>
       </div>
     </div>
     <!-- Header End -->
 
-    <!-- Class Start -->
+    <!-- Contact Start -->
     <div class="container-fluid pt-5">
       <div class="container">
         <div class="text-center pb-2">
           <p class="section-title px-5">
-            <span class="px-2">Popular Classes</span>
+            <span class="px-2">Get In Touch</span>
           </p>
-          <h1 class="mb-4">Classes for Your Kids</h1>
+          <h1 class="mb-4">Contact Us For Any Query</h1>
         </div>
         <div class="row">
-          <div class="col-lg-4 mb-5">
-            <div class="card border-0 bg-light shadow-sm pb-2">
-              <img class="card-img-top mb-2" src="img/class-1.jpg" alt="" />
-              <div class="card-body text-center">
-                <h4 class="card-title">Drawing Class</h4>
-                <p class="card-text">
-                  Justo ea diam stet diam ipsum no sit, ipsum vero et et diam
-                  ipsum duo et no et, ipsum ipsum erat duo amet clita duo
-                </p>
-              </div>
-              <div class="card-footer bg-transparent py-4 px-5">
-                <div class="row border-bottom">
-                  <div class="col-6 py-1 text-right border-right">
-                    <strong>Age of Kids</strong>
-                  </div>
-                  <div class="col-6 py-1">3 - 6 Years</div>
+          <div class="col-lg-7 mb-5">
+            <div class="contact-form">
+              <div id="success"></div>
+              <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                <div class="control-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Your Name"
+                    required="required"
+                    data-validation-required-message="Please enter your name"
+                  />
+                  <p class="help-block text-danger"></p>
                 </div>
-                <div class="row border-bottom">
-                  <div class="col-6 py-1 text-right border-right">
-                    <strong>Total Seats</strong>
-                  </div>
-                  <div class="col-6 py-1">40 Seats</div>
+                <div class="control-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Your Email"
+                    required="required"
+                    data-validation-required-message="Please enter your email"
+                  />
+                  <p class="help-block text-danger"></p>
                 </div>
-                <div class="row border-bottom">
-                  <div class="col-6 py-1 text-right border-right">
-                    <strong>Class Time</strong>
-                  </div>
-                  <div class="col-6 py-1">08:00 - 10:00</div>
+                <div class="control-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="subject"
+                    placeholder="Subject"
+                    required="required"
+                    data-validation-required-message="Please enter a subject"
+                  />
+                  <p class="help-block text-danger"></p>
                 </div>
-                <div class="row">
-                  <div class="col-6 py-1 text-right border-right">
-                    <strong>Tution Fee</strong>
-                  </div>
-                  <div class="col-6 py-1">$290 / Month</div>
+                <div class="control-group">
+                  <textarea
+                    class="form-control"
+                    rows="6"
+                    id="message"
+                    placeholder="Message"
+                    required="required"
+                    data-validation-required-message="Please enter your message"
+                  ></textarea>
+                  <p class="help-block text-danger"></p>
                 </div>
-              </div>
-              <a href="" class="btn btn-primary px-4 mx-auto mb-4">Join Now</a>
+                <div>
+                  <button
+                    class="btn btn-primary py-2 px-4"
+                    type="submit"
+                    id="sendMessageButton"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
-          <div class="col-lg-4 mb-5">
-            <div class="card border-0 bg-light shadow-sm pb-2">
-              <img class="card-img-top mb-2" src="img/class-2.jpg" alt="" />
-              <div class="card-body text-center">
-                <h4 class="card-title">Language Learning</h4>
-                <p class="card-text">
-                  Justo ea diam stet diam ipsum no sit, ipsum vero et et diam
-                  ipsum duo et no et, ipsum ipsum erat duo amet clita duo
-                </p>
+          <div class="col-lg-5 mb-5">
+            <p>
+              Labore sea amet kasd diam justo amet ut vero justo. Ipsum ut et
+              kasd duo sit, ipsum sea et erat est dolore, magna ipsum et magna
+              elitr. Accusam accusam lorem magna, eos et sed eirmod dolor est
+              eirmod eirmod amet.
+            </p>
+            <div class="d-flex">
+              <i
+                class="fa fa-map-marker-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+                style="width: 45px; height: 45px"
+              ></i>
+              <div class="pl-3">
+                <h5>Address</h5>
+                <p>123 Street, New York, USA</p>
               </div>
-              <div class="card-footer bg-transparent py-4 px-5">
-                <div class="row border-bottom">
-                  <div class="col-6 py-1 text-right border-right">
-                    <strong>Age of Kids</strong>
-                  </div>
-                  <div class="col-6 py-1">3 - 6 Years</div>
-                </div>
-                <div class="row border-bottom">
-                  <div class="col-6 py-1 text-right border-right">
-                    <strong>Total Seats</strong>
-                  </div>
-                  <div class="col-6 py-1">40 Seats</div>
-                </div>
-                <div class="row border-bottom">
-                  <div class="col-6 py-1 text-right border-right">
-                    <strong>Class Time</strong>
-                  </div>
-                  <div class="col-6 py-1">08:00 - 10:00</div>
-                </div>
-                <div class="row">
-                  <div class="col-6 py-1 text-right border-right">
-                    <strong>Tution Fee</strong>
-                  </div>
-                  <div class="col-6 py-1">$290 / Month</div>
-                </div>
-              </div>
-              <a href="" class="btn btn-primary px-4 mx-auto mb-4">Join Now</a>
             </div>
-          </div>
-          <div class="col-lg-4 mb-5">
-            <div class="card border-0 bg-light shadow-sm pb-2">
-              <img class="card-img-top mb-2" src="img/class-3.jpg" alt="" />
-              <div class="card-body text-center">
-                <h4 class="card-title">Basic Science</h4>
-                <p class="card-text">
-                  Justo ea diam stet diam ipsum no sit, ipsum vero et et diam
-                  ipsum duo et no et, ipsum ipsum erat duo amet clita duo
-                </p>
+            <div class="d-flex">
+              <i
+                class="fa fa-envelope d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+                style="width: 45px; height: 45px"
+              ></i>
+              <div class="pl-3">
+                <h5>Email</h5>
+                <p>info@example.com</p>
               </div>
-              <div class="card-footer bg-transparent py-4 px-5">
-                <div class="row border-bottom">
-                  <div class="col-6 py-1 text-right border-right">
-                    <strong>Age of Kids</strong>
-                  </div>
-                  <div class="col-6 py-1">3 - 6 Years</div>
-                </div>
-                <div class="row border-bottom">
-                  <div class="col-6 py-1 text-right border-right">
-                    <strong>Total Seats</strong>
-                  </div>
-                  <div class="col-6 py-1">40 Seats</div>
-                </div>
-                <div class="row border-bottom">
-                  <div class="col-6 py-1 text-right border-right">
-                    <strong>Class Time</strong>
-                  </div>
-                  <div class="col-6 py-1">08:00 - 10:00</div>
-                </div>
-                <div class="row">
-                  <div class="col-6 py-1 text-right border-right">
-                    <strong>Tution Fee</strong>
-                  </div>
-                  <div class="col-6 py-1">$290 / Month</div>
-                </div>
+            </div>
+            <div class="d-flex">
+              <i
+                class="fa fa-phone-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+                style="width: 45px; height: 45px"
+              ></i>
+              <div class="pl-3">
+                <h5>Phone</h5>
+                <p>+012 345 67890</p>
               </div>
-              <a href="" class="btn btn-primary px-4 mx-auto mb-4">Join Now</a>
+            </div>
+            <div class="d-flex">
+              <i
+                class="far fa-clock d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+                style="width: 45px; height: 45px"
+              ></i>
+              <div class="pl-3">
+                <h5>Opening Hours</h5>
+                <strong>Sunday - Friday:</strong>
+                <p class="m-0">08:00 AM - 05:00 PM</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Class End -->
-
+    <!-- Contact End -->
 
     <!-- Footer Start -->
     <div
@@ -372,16 +363,16 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
 
     <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+    <script src="../mail/jqBootstrapValidation.min.js"></script>
+    <script src="../mail/contact.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="../static/js/main.js"></script>
   </body>
 </html>

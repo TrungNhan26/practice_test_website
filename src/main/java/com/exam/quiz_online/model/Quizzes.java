@@ -20,7 +20,6 @@ public class Quizzes {
 
     private int totalMarks;
     private int duration;
-
     @ManyToOne
     @JoinColumn(name = "createdBy")
     private Users createdBy;

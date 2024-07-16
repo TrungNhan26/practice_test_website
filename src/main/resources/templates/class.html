@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <title>KidKinder - Kindergarten Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Free HTML Templates" name="keywords" />
+    <meta content="Free HTML Templates" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Flaticon Font -->
+    <link href="../lib/flaticon/font/flaticon.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/static/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+  <div th:include="header"></div>
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-custom mb-5">
+      <div
+        class="d-flex flex-column align-items-center justify-content-center"
+        style="min-height: 400px"
+      >
+        <h3 class="display-3 font-weight-bold text-white">Our Classes</h3>
+        <div class="d-inline-flex text-white">
+          <p class="m-0"><a class="text-white" href="">Home</a></p>
+          <p class="m-0 px-2">/</p>
+          <p class="m-0">Our Classes</p>
+        </div>
+      </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Class Start -->
+    <div class="container-fluid pt-5">
+      <div class="container">
+        <div class="text-center pb-2">
+          <p class="section-title px-5">
+            <span class="px-2">Popular Classes</span>
+          </p>
+          <h1 class="mb-4">Classes for Your Kids</h1>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 mb-5" th:each="detail:${detail}">
+            <div class="card border-0 bg-light shadow-sm pb-2">
+              <img class="card-img-top mb-2" src="../static/img/class-1.jpg" alt="" />
+              <div class="card-body text-center">
+                <h4 class="card-title" th:text="${detail.getQuizName()}"></h4>
+                <p class="card-text" th:text="${detail.getDescription()}">
+                </p>
+              </div>
+              <div class="card-footer bg-transparent py-4 px-5">
+                <div class="row border-bottom">
+                  <div class="col-6 py-1 text-right border-right">
+                    <strong>Time</strong>
+                  </div>
+                  <div class="col-6 py-1" th:text="${detail.getDuration()}"></div>
+                </div>
+                <div class="row border-bottom">
+                  <div class="col-6 py-1 text-right border-right">
+                    <strong>Total Question </strong>
+                  </div>
+                    <div class="col-6 py-1" th:text="${questionsCountMap[detail.quizId]}"></div>
+                </div>
+                <div class="row border-bottom">
+                  <div class="col-6 py-1 text-right border-right">
+                    <strong>Total Mark</strong>
+                  </div>
+                  <div class="col-6 py-1" th:text="${detail.getTotalMarks()}"></div>
+                </div>
+              </div>
+              <a href="#" class="btn btn-primary px-4 mx-auto mb-4"
+                 th:onclick="'return confirmJoin(' + ${detail.quizId} + ');'">Join Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Class End -->
+
+
+  <div th:include="footer"></div>
+
+    <script>
+      function confirmJoin(quizId) {
+        if (confirm("Do you want to join this class?")) {
+          window.location.href = "/quizz/" + quizId;  // Chuyển đến trang 'join.html' với tham số quizId
+        }
+        return false;  // Ngăn chặn hành động mặc định của thẻ <a>
+      }
+    </script>
+  </body>
+</html>

@@ -14,6 +14,7 @@ public class Questions {
     @JoinColumn(name = "quizId")
     private Quizzes quiz;
 
+
     @Column(columnDefinition = "TEXT", nullable = false)
     private String questionText;
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)

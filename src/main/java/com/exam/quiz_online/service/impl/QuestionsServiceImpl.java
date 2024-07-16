@@ -13,7 +13,7 @@ public class QuestionsServiceImpl implements QuestionsService {
     @Autowired
     private QuestionsRepository questionsRepository;
     @Override
-    public List<Questions> showAll() {
-        return questionsRepository.findAll();
+    public List<Questions> showAll( Integer quizzId) {
+        return questionsRepository.findQuestionsByQuiz(quizzId);
     }
 }
